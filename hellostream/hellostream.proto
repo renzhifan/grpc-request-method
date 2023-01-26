@@ -1,0 +1,33 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+option go_package = "grpc-example/hellostream";//指定生成的Go代码在你项目中的导入路径
+
+package hellostream; // 包名
+
+
+// 定义服务
+service Greeter {
+    // SayHello 一元RPC方法
+    rpc SayHello (HelloRequest) returns (HelloResponse) {}
+
+    //GetStream 服务端流
+    rpc GetStream (HelloRequest) returns (stream HelloResponse) {}
+
+    //SetStream 客户端流
+    rpc SetStream (stream HelloRequest) returns (HelloResponse) {}
+
+    //AllStream 双向流
+    rpc AllStream (stream HelloRequest) returns (stream HelloResponse) {}
+
+}
+
+
+// 请求消息
+message HelloRequest {
+    string  data= 1;
+}
+
+// 响应消息
+message HelloResponse {
+    string  data= 1;
+}
