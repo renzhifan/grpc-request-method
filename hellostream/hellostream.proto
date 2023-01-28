@@ -4,6 +4,8 @@ option go_package = "grpc-example/hellostream";//指定生成的Go代码在你�
 
 package hellostream; // 包名
 
+option php_namespace = "GrpcPhpClient\\Proto";
+option php_metadata_namespace = "GrpcPhpClient\\Proto";
 
 // 定义服务
 service Greeter {

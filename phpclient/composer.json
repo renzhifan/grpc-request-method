@@ -1,0 +1,18 @@
+{
+    "name": "renzhifan/grpc-php-client",
+    "autoload": {
+        "psr-4": {
+            "GrpcPhpClient\\": "src/GrpcPhpClient"
+        }
+    },
+    "authors": [
+        {
+            "name": "renzhifan",
+            "email": "renzhifan@xxx.com"
+        }
+    ],
+    "require": {
+        "grpc/grpc": "^1.42",
+        "google/protobuf": "^3.21"
+    }
+}
