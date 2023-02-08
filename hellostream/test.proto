@@ -1,0 +1,31 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+option go_package = "grpc-example/hellostream";//指定生成的Go代码在你项目中的导入路径
+
+package hellostream; // 包名
+
+option php_namespace = "GrpcPhpClient\\Proto";
+option php_metadata_namespace = "GrpcPhpClient\\Proto";
+
+// 定义服务
+service Test {
+    // Test 一元RPC方法
+    rpc Test (HelloReq) returns (HelloRly) {}
+
+}
+
+
+// 请求消息
+message HelloReq {
+    string  data= 1;
+}
+
+// 响应消息
+message HelloRly{
+    map<uint32, WikiInfo> map_field = 1;
+}
+
+message WikiInfo{
+    uint32 wiki_id=1;
+    string wiki_name=2;
+}
